@@ -13,7 +13,8 @@ public interface AccountRepository extends JpaRepository<AccountEntity, Long> {
     AccountEntity getByAccountNo(String accountNo);
 
     @Modifying(clearAutomatically = true)
-    @Query(value = "update account set money=:moneyAmount where account_no=:accountNo", nativeQuery = true)
+    @Query(value = "update account set money=:moneyAmount " +
+                   "where account_no=:accountNo", nativeQuery = true)
     @Transactional
     void updateMoneyAmount(String accountNo, BigDecimal moneyAmount);
 }
