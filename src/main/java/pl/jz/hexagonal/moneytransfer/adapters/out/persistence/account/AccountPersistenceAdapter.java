@@ -21,8 +21,10 @@ public class AccountPersistenceAdapter implements AccountProvider {
     }
 
     @Override
-    public boolean saveAccount(Account account) {
+    public boolean updateAccountAmount(Account account) {
+        //open transaction
         accountRepository.updateMoneyAmount(account.getAccountNo(), account.getMoney());
+        //commit and close
         return true;
     }
 }

@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "account")
-public class AccountEntity {
+class AccountEntity {
     @Id
     @GeneratedValue
     private Long id;

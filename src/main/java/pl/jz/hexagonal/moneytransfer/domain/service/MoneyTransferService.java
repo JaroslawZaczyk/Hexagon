@@ -40,8 +40,8 @@ public class MoneyTransferService implements MoneyTransfer {
         firstAccount.subMoney(moneyAmount);
         secondAccount.addMoney(moneyAmount);
 
-        accountProvider.saveAccount(firstAccount);
-        accountProvider.saveAccount(secondAccount);
+        accountProvider.updateAccountAmount(firstAccount);
+        accountProvider.updateAccountAmount(secondAccount);
 
         userNotificationManager.forEach(n -> notifyUsers(n, accountOneNo, accountTwoNo));
 
